@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hangman Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/CSS/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Barrio|Bungee+Outline|Bungee+Shade|Bungee+Inline" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<h1>HANGMAN <span id="h2">Hockey Edition</span></h1>
+		</header>
+
+		<br><br>
+
+		<!-- need this because will use javascript to write 'Goal!! Nice Shot. You win.' if winner or 'Head to the penalty box. You lose.' if loser -->
+		<div id="result">
+			<h3>Goal!! Nice Shot. You win.</h3>
+		</div>
+
+		<br><br>
+
+		<div class="content">
+			<h4>Press any key to begin guessing.</h4>
+
+			<br>
+
+			<h4>Current Word</h4>
+			<br>
+			<!-- will be using javascript to write in this div -->
+			<div id="word">
+				<p>______________</p>
+			</div>
+
+			<br>
+
+			<h4>Number of Guesses Remaining</h4>
+			<br>
+			<!-- will be using javascript to write in this div -->
+			<div id="numberGuesses">
+				<p>12</p>
+			</div>
+			
+			<br>
+
+			<h4>Letters Already Guessed</h4>
+			<br>
+			<!-- will be using javascript to write in this div -->
+			<div id="lettersGuessed">
+				<p>n/a</p>
+			</div>
+			
+			<br>
+
+			<h4>Wins</h4>
+			<br>
+			<!-- will be using javascript to write in this div -->
+			<div id="wins">
+				<p>0</p>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="assets/JavaScript/game.js" type="text/javascript"></script>
+
+</body>
+</html>
