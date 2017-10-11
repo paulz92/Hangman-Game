@@ -1,96 +1,102 @@
 body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
+    width: 100%; /*body full with of window*/
+    height: 100vh; /*so it takes up the full viewport height*/
+    margin: 0; /*flush*/
     padding: 0;
     background-color: black;
 }
 
 .container {
-	margin: 0 auto;
-	width: 1200px;
-	height: 100%;
-	background-image: url(../Images/hockey-game.jpg);
-	background-size: cover;
+	margin: 0 auto; /*center it*/
+	width: 1200px; /*leave some side margin*/
+	height: 100%; /*100% of body/viewport*/
+	background-image: url(../Images/hockey-game.jpg); /*background image in container, want black borders in body*/
+	background-size: cover; /*more or less fills and fits to screen*/
     background-repeat: no-repeat;
-    position: relative;	
-}
-
-#result {
-	margin: 0 auto;
-	width: 60%;
-	text-align: center;
-}
-
-h3 {
-	font-family: 'Barrio', cursive;
-	text-align: center;
-	color: white;
-	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue;
-	font-size: 2.9em;
-	background-color: #3297FD;
-	border-radius: 25px;
-	position: relative;
-	bottom: -7px;
-}
-
-.content {
-	margin: 0 auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	width: 900px;
-	height: 66%;
-	text-align: center;
-	border: 15px solid #b30000;
-	border-bottom: 0px;
-	border-radius: 25px 25px 0px 0px;
-	position: absolute;
-	bottom: 0;
-	left: 135px;
-	background-image: url(../Images/net-background.jpg);
+    position: relative;	/*will absolute position content against it*/
 }
 
 header {
 	background-color: #3297FD;
 	padding-bottom: 10px;
-	border-radius: 25px;
+	border-radius: 25px; /*curve border style*/
 	position: relative;
-	bottom: -15px;
+	bottom: -15px; /*relative, moved down 15px so it's not flush on top*/
 }
 
 h1 {
-	font-family: 'Bungee Shade', cursive;
-	font-size: 5.5em;		
+	font-family: 'Bungee Shade', cursive; /*google fonts*/
+	font-size: 5.5em;	
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue;
+	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders. google fu!*/
 }
 
 #h2 {
-	font-family: 'Bungee Outline', cursive;
+	font-family: 'Bungee Outline', cursive; /*google fonts*/
 	font-size: 0.7em;
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue;
+	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders. google fu!*/
+}
+
+#result {
+	margin: 0 auto; /*centered*/
+	width: 60%; /*leave some space on the sides*/
+	text-align: center;
+}
+
+h3 {
+	font-family: 'Barrio', cursive; /*google fonts*/
+	text-align: center;
+	color: white;
+	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*outlines text with borders. google fu!*/
+	font-size: 2.9em;
+	background-color: #3297FD;
+	border-radius: 25px; /*like the rounded over the edged */
+	position: relative;
+	bottom: -7px; /*moved it down 7px to look nicer on screen*/
+}
+
+.content {
+	margin: 0 auto; /*centered within container*/
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 900px;
+	height: 63%;
+	text-align: center;
+	border: 35px solid #b30000; /*thick to look like hockey posts/crossbar*/
+	border-bottom: 0px;
+	border-radius: 25px 25px 0px 0px;
+	position: absolute; /*absolute relative to main container*/
+	bottom: 0; /*touching bottom*/
+	left: 120px; /*centered*/
+	background-image: url(../Images/net-background.jpg); /*makes it look like a hockey net*/
+}
+
+.stats {
+	margin: 0 auto; /*center within the net horizontally*/
+	margin-top: 33px; /*center within the net vertically*/
+	width: 65%;
 }
 
 h4 {
-	margin: 0 auto;
+	margin: 0 auto; /*centered*/
 	padding-top: 5px;
-	padding-bottom: 2px;
-	font-family: 'Barrio', cursive;
+	padding-bottom: 2px; /*equal blue space on top and bottom*/
+	font-family: 'Barrio', cursive; /*google fonts*/
 	font-size: 1.8em;
 	text-align: center;
 	color: white;
-	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue;
+	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*font outline*/
 	background-color: #3297FD;
 	border-radius: 25px;
-	width: 500px;
+	width: 540px;
 }
 
 p {
-	font-family: 'Bungee Inline', cursive;
+	font-family: 'Bungee Inline', cursive; /*google fonts*/
 	font-size: 1.5em;
 }
