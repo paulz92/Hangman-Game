@@ -55,9 +55,10 @@ h3 {
 	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*outlines text with borders. google fu!*/
 	font-size: 2.9em;
 	background-color: #3297FD;
+	padding-top: 4px;
 	border-radius: 25px; /*like the rounded over the edged */
 	position: relative;
-	bottom: -7px; /*moved it down 7px to look nicer on screen*/
+	bottom: -5px; /*moved it down 7px to look nicer on screen*/
 }
 
 .content {

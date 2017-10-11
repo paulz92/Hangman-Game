@@ -25,7 +25,7 @@
 		<!-- need this because will use javascript to write 'Goal!! Nice Shot. You win.' if winner or 
 		'Head to the penalty box. You lose.' if loser -->
 		<div>
-			<h3 id="result">Put the biscuit in the basket!</h3>
+			<h3 id="result">Put the biscuit in the basket</h3>
 		</div>
 
 		<br><br>
@@ -36,7 +36,7 @@
 			<!-- wrapping all the stuff within content div to center it vertically/horizontally within the hockey goal -->
 			<div class="stats">
 				<!-- giving instuction id because this will be rewritten with JS -->
-				<h4 id="instructions">Press space bar to drop the puck!</h4>
+				<h4 id="instructions">Press space bar to drop the puck</h4>
 
 				<br>
 
@@ -44,16 +44,7 @@
 				<br>
 				<div>
 					<!-- will be using javascript to update text -->
-					<p id="word">C'mon ref, drop the puck!</p>
-				</div>
-
-				<br>
-
-				<h4>Number of Guesses Remaining</h4>
-				<br>
-				<div>
-					<!-- will be using javascript to update text -->
-					<p id="numberGuesses">10</p>
+					<p id="word"></p>
 				</div>
 				
 				<br>
@@ -62,16 +53,25 @@
 				<br>
 				<div>
 					<!-- will be using javascript to update text -->
-					<p id="lettersGuessed">None yet!</p>
+					<p id="lettersGuessed"></p>
 				</div>
 				
+				<br>
+
+				<h4>Number of Incorrect Guesses Left</h4>
+				<br>
+				<div>
+					<!-- will be using javascript to update text -->
+					<p id="numberGuesses"></p>
+				</div>	
+							
 				<br>
 
 				<h4>Wins</h4>
 				<br>
 				<div>
 					<!-- will be using javascript to write in this div -->
-					<p id="wins">0</p>
+					<p id="wins"></p>
 				</div>
 			<!-- close stats div -->
 			</div>
