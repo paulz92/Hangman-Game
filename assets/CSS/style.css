@@ -44,7 +44,7 @@ h1 {
 
 #result {
 	margin: 0 auto; /*centered*/
-	width: 60%; /*leave some space on the sides*/
+	width: 80%; /*leave some space on the sides*/
 	text-align: center;
 }
 
@@ -65,7 +65,7 @@ h3 {
 	margin: 0 auto; /*centered within container*/
 	padding-top: 15px;
 	padding-bottom: 15px;
-	width: 900px;
+	width: 890px;
 	height: 63%;
 	text-align: center;
 	border: 35px solid #b30000; /*thick to look like hockey posts/crossbar*/
