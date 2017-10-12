@@ -10,12 +10,12 @@
 //          decreases by 1
 // check 6) if user repeats a guess, alert user, nothing happens to stats. important to not decrease 
 //          # guesses for accidentally repeated guesses or add it to incorrect guesses more than once
-//  bug  7) user repeats this process until 1 of 2 things happens:
+// check 7) user repeats this process until 1 of 2 things happens:
 //        7.1) if user guesses all letters correctly before # guesses is 0:
 //         		- update result to "hockey themed win text"
 //              - increase wins by 1
 //              - reset # guesses to 10
-//              - reset incorrect guesses to 'None yet!'   //figure out how to generate new randomWord on wins/loss rather than same word
+//              - reset incorrect guesses to 'None yet!'
 //              - immediately restart game                 
 // 		   7.2) if user depletes guesses before all _s are erased:
 //              - update result to 'snarky lose message'
@@ -31,7 +31,7 @@ var words = ["gretzky", "lemieux", "brodeur", "messier", "slapshot", "assist", "
 			 "breakaway", "crossbar", "yzerman", "wraparound", "faceoff", "trapezoid", "fisticuffs",
 			 "snipe", "jersey", "ovechkin", "crosby", "blackhawks", "forward", "defenseman"];
 
-var randomWords = words[Math.floor(Math.random() * words.length)]; // choose a random word
+var randomWords;
 
 var blankWords = []; // empty blank words array
 
@@ -43,7 +43,7 @@ var alreadyGuessed = []; // empty letters already guessed array
 
 var wrongGuesses = []; // empty wrong guesses array
 
-var numGuesses = 10; //# of incorrect guesses
+var numGuesses = 10; // # of incorrect guesses
 
 var wins = 0; // wins
 
@@ -57,8 +57,16 @@ var html = {
 	writeWins: document.getElementById("wins"),
 };
 
+
+function getRandomWord(){
+	randomWords = words[Math.floor(Math.random() * words.length)]; // choose a random word
+};
+
 // creating functions
 function startGame(){
+
+	getRandomWord();
+
 	// generating blankWords array - will be an array of _ with the same length of random word
 	for (var i = 0; i < randomWords.length; i++) {
 		blankWords[i] = "_";
@@ -72,7 +80,7 @@ function startGame(){
 	html.writeWins.innerHTML = wins;
 
 	// log to console
-	console.log("The puck is dropped, here we go!");
+	console.log("game started");
 	console.log("--------------------------------");
 };
 
@@ -84,8 +92,8 @@ function winGame(){
 		html.writeResult.innerHTML = "You win! Keep the streak alive.";
 		wrongGuesses = [];
 		alreadyGuessed = [];
+		blankWords = [];
 		numGuesses = 10;
-		randomWords;
 		console.log("win");
 		console.log("======================");
 		startGame(); //figure out how to generate new word
@@ -98,8 +106,8 @@ function loseGame(){
 		html.writeResult.innerHTML = "You lose. Maybe try to win this time?";
 		wrongGuesses = [];
 		alreadyGuessed = [];
+		blankWords = [];
 		numGuesses = 10;
-		randomWords;
 		console.log("loss");
 		console.log("======================");
 		startGame(); //figure out how to generate new word
