@@ -1,7 +1,7 @@
 body {
     /*width: 100%; body full with of window*/
     height: 100vh; /*so it takes up the full viewport height*/
-    background-image: url(../Images/hockey-game.jpg); /*background image in container, want black borders in body*/
+    background-image: url(../Images/hockey-game.jpg); /*background image*/
 	background-size: cover; /*more or less fills and fits to screen*/
     background-repeat: no-repeat;
     margin: 0; /*flush*/
@@ -11,6 +11,10 @@ body {
 }
 
 .container {
+	overflow: auto;
+}
+
+.main-content {
 	margin: 0 auto; /*center it*/
 	width: 1200px; /*leave some side margin*/
 	height: 100vh; /*100% of body/viewport*/
@@ -63,7 +67,7 @@ h3 {
 }
 
 .net {
-	margin: 0 auto; /*centered within container*/
+	margin: 0 auto; /*centered within main-content*/
 	padding-top: 15px;
 	width: 75%;
 	height: 62%;
@@ -74,6 +78,7 @@ h3 {
 	position: relative;
 	bottom: 0px; /*touching bottom*/
 	background-image: url(../Images/net-background.jpg); /*makes it look like a hockey net*/
+	overflow: auto;
 }
 
 .stats {
@@ -104,7 +109,7 @@ p {
 /*media queries for responsiveness*/
 @media screen and (max-width: 1220px) {
  
-	.container {
+	.main-content {
 	 	width: 960px;
 	}
 
@@ -137,7 +142,7 @@ p {
 
 @media screen and (max-width: 980px) {
 
-	.container {
+	.main-content {
 	 	width: 750px;
 	}
 
@@ -180,7 +185,7 @@ p {
 
 @media screen and (max-width: 768px) {
 
-	.container {
+	.main-content {
 	 	width: 635px;
 	}
 
@@ -217,7 +222,7 @@ p {
 
 @media screen and (max-width: 640px) {
 
-	.container {
+	.main-content {
 	 	width: 600px;
 	}
 
