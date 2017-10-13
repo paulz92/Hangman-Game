@@ -1,25 +1,26 @@
 body {
-    width: 100%; /*body full with of window*/
+    /*width: 100%; body full with of window*/
     height: 100vh; /*so it takes up the full viewport height*/
+    background-image: url(../Images/hockey-game.jpg); /*background image in container, want black borders in body*/
+	background-size: cover; /*more or less fills and fits to screen*/
+    background-repeat: no-repeat;
     margin: 0; /*flush*/
     padding: 0;
     background-color: black;
+    position: relative;	/*will absolute position content against it*/
 }
 
 .container {
 	margin: 0 auto; /*center it*/
 	width: 1200px; /*leave some side margin*/
-	height: 100%; /*100% of body/viewport*/
-	background-image: url(../Images/hockey-game.jpg); /*background image in container, want black borders in body*/
-	background-size: cover; /*more or less fills and fits to screen*/
-    background-repeat: no-repeat;
-    position: relative;	/*will absolute position content against it*/
+	height: 100vh; /*100% of body/viewport*/
 }
 
 header {
 	background-color: #3297FD;
 	padding-bottom: 10px;
 	border-radius: 25px; /*curve border style*/
+	width: 100%;
 	position: relative;
 	bottom: -15px; /*relative, moved down 15px so it's not flush on top*/
 }
@@ -44,7 +45,7 @@ h1 {
 
 #result {
 	margin: 0 auto; /*centered*/
-	width: 80%; /*leave some space on the sides*/
+	width: 75%; /*leave some space on the sides*/
 	text-align: center;
 }
 
@@ -58,28 +59,26 @@ h3 {
 	padding-top: 4px;
 	border-radius: 25px; /*like the rounded over the edged */
 	position: relative;
-	bottom: -5px; /*moved it down 7px to look nicer on screen*/
+	bottom:-5px; /*moved it down 7px to look nicer on screen*/
 }
 
-.content {
+.net {
 	margin: 0 auto; /*centered within container*/
 	padding-top: 15px;
-	padding-bottom: 15px;
-	width: 890px;
-	height: 63%;
+	width: 75%;
+	height: 62%;
 	text-align: center;
-	border: 35px solid #b30000; /*thick to look like hockey posts/crossbar*/
-	border-bottom: 0px;
+	border: 30px solid #b30000; /*thick to look like hockey posts/crossbar*/
+	border-bottom: 10px solid #3297FD;
 	border-radius: 25px 25px 0px 0px;
-	position: absolute; /*absolute relative to main container*/
-	bottom: 0; /*touching bottom*/
-	left: 120px; /*centered*/
+	position: relative;
+	bottom: 0px; /*touching bottom*/
 	background-image: url(../Images/net-background.jpg); /*makes it look like a hockey net*/
 }
 
 .stats {
 	margin: 0 auto; /*center within the net horizontally*/
-	margin-top: 33px; /*center within the net vertically*/
+	margin-top: 15px; /*center within the net vertically*/
 	width: 65%;
 }
 
@@ -94,10 +93,166 @@ h4 {
 	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*font outline*/
 	background-color: #3297FD;
 	border-radius: 25px;
-	width: 540px;
+	width: 100%;
 }
 
 p {
 	font-family: 'Bungee Inline', cursive; /*google fonts*/
 	font-size: 1.5em;
+}
+
+/*media queries for responsiveness*/
+@media screen and (max-width: 1220px) {
+ 
+	.container {
+	 	width: 960px;
+	}
+
+	.net {
+		border: 25px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border-bottom: 10px solid #3297FD;
+	}
+
+	h1 {
+	 	font-size: 4.5em;
+	 	padding-top: 5px;
+	}
+
+	h2 {
+	 	font-size: .5em;
+	}
+
+	h3 {
+	 	font-size: 2.2em;
+	}
+
+	h4 {
+	 	font-size: 1.5em;
+	}
+	
+	p {
+		font-size: 1.3em;
+	}
+}
+
+@media screen and (max-width: 980px) {
+
+	.container {
+	 	width: 750px;
+	}
+
+	.net {
+		width: 90%;
+		border: 25px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border-bottom: 10px solid #3297FD;
+	}
+
+	#result {
+		width: 95%;
+	}
+
+	header {
+		width: 95%;
+		margin: 0 auto;
+	}
+
+	h1 {
+	 	font-size: 3.3em;
+	 	padding-top: 5px;
+	}
+
+	h2 {
+	 	font-size: .3em;
+	}
+
+	h3 {
+	 	font-size: 2.0em;
+	}
+
+	h4 {
+	 	font-size: 1.5em;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.container {
+	 	width: 635px;
+	}
+
+	.net {
+		border: 20px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border-bottom: 10px solid #3297FD;
+	}
+
+	.stats {
+	 	width: 75%;
+	}
+
+	h1 {
+	 	font-size: 2.8em;
+	 	padding-top: 5px;
+	}
+
+	h2 {
+		font-size: .1em;
+	}
+
+	h3 {
+	 	font-size: 1.9em;
+	}
+
+	h4 {
+	 	font-size: 1.4em;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
+}
+
+@media screen and (max-width: 640px) {
+
+	.container {
+	 	width: 600px;
+	}
+
+	.net {
+		width: 90%;
+		border: 20px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border-bottom: 10px solid #3297FD;
+	}
+
+	#result {
+		width: 95%;
+	}
+
+	header {
+		width: 95%;
+		margin: 0 auto;
+	}
+
+	h1 {
+	 	font-size: 2.6em;
+	}
+
+	h2 {
+	 	font-size: .1em;
+	}
+
+	h3 {
+	 	font-size: 1.8em;
+	}
+
+	h4 {
+	 	font-size: 1.4em;
+	}
+
+	p {
+		font-size: 1.2em;
+	}
 }

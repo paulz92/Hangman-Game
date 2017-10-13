@@ -29,7 +29,11 @@
 var words = ["gretzky", "lemieux", "brodeur", "messier", "slapshot", "assist", "penalty", "powerplay", 
 			 "shorthanded", "puck", "goal", "bodycheck", "clapbomb", "bender", "duster", "dangles", 
 			 "breakaway", "crossbar", "yzerman", "wraparound", "faceoff", "trapezoid", "fisticuffs",
-			 "snipe", "jersey", "ovechkin", "crosby", "blackhawks", "forward", "defenseman"];
+			 "snipe", "jersey", "ovechkin", "crosby", "blackhawks", "forward", "defenseman", "arena",
+			 "backhand", "wrister", "slashing", "crosschecking", "hooking", "knucklepuck", "spinorama",
+			 "lundqvist", "mcdavid", "blocker", "boards", "crease", "saucer", "sherwood", "butterfly",
+			 "chirping", "referee", "elbowing", "enforcer", "netminder", "zamboni", "stickhandling",
+			 "winger", "tarasenko", "esposito", "misconduct", "snowshower", "beauty", "howitzer"];
 
 var randomWords;
 
@@ -47,7 +51,15 @@ var numGuesses = 10; // # of incorrect guesses
 
 var wins = 0; // wins
 
-//creating an object for writing to DOM
+var sounds = {
+	barDown: document.getElementById("barDown"),
+	shotWide: document.getElementById("shotWide"),
+	goalHorn: document.getElementById("goalHorn"),
+	buzzer: document.getElementById("buzzer"),
+	hockeyStop: document.getElementById("hockeyStop"),
+};
+
+// creating an object for writing to DOM
 var html = {
 	writeResult: document.getElementById("result"),
 	writeInstructions: document.getElementById("instructions"),
@@ -57,12 +69,13 @@ var html = {
 	writeWins: document.getElementById("wins"),
 };
 
-
+// functions
+// choose a random word
 function getRandomWord(){
-	randomWords = words[Math.floor(Math.random() * words.length)]; // choose a random word
+	randomWords = words[Math.floor(Math.random() * words.length)];
 };
 
-// creating functions
+// start the game
 function startGame(){
 
 	getRandomWord();
@@ -90,13 +103,14 @@ function winGame(){
 		wins++;
 		html.writeWins.innerHTML = wins;
 		html.writeResult.innerHTML = "You win! Keep the streak alive.";
-		wrongGuesses = [];
-		alreadyGuessed = [];
-		blankWords = [];
-		numGuesses = 10;
-		console.log("win");
+		wrongGuesses = [];    // resetting global variables that have been changed
+		alreadyGuessed = [];  // ..
+		blankWords = [];      // ..
+		numGuesses = 10;      // ..
+		sounds.goalHorn.play(); // play goal horn sound
+		console.log("win");  
 		console.log("======================");
-		startGame(); //figure out how to generate new word
+		startGame(); //restarts game
 	}
 };
 
@@ -104,23 +118,27 @@ function loseGame(){
 	// if numGuesses is 0, lose	
 	if (numGuesses === 0) {
 		html.writeResult.innerHTML = "You lose. Maybe try to win this time?";
-		wrongGuesses = [];
-		alreadyGuessed = [];
-		blankWords = [];
-		numGuesses = 10;
+		wrongGuesses = [];   // resetting global variables that have been changed
+		alreadyGuessed = []; // ..
+		blankWords = [];     // ..
+		numGuesses = 10;     // ..
+		sounds.buzzer.play(); // play buzzer sound
 		console.log("loss");
 		console.log("======================");
-		startGame(); //figure out how to generate new word
+		startGame(); //restarts game
 	}
 };
 
-// space bar begins game
+// space bar begins game ONLY on page load
 document.onkeyup = function(space) {
 
 	// 32 is the char code for space bar
 	if (space.keyCode === 32) {
 
 		startGame();
+
+		// play hockeyStop sound
+		sounds.hockeyStop.play();
 
 		// user gameplay begins here
 		document.onkeyup = function playGame(event) {
@@ -140,6 +158,9 @@ document.onkeyup = function(space) {
 				// push letter to the wrongGuesses and alreadyGuessed arrays
 				wrongGuesses.push(userGuess);
 				alreadyGuessed.push(userGuess);
+
+				// play shot wide sound
+				sounds.shotWide.play();
 
 				// display, 'shot wide' to result
 				html.writeResult.innerHTML = "Shot wide.";
@@ -163,8 +184,11 @@ document.onkeyup = function(space) {
 			    // push letter to the alreadyGuessed array.					
 				alreadyGuessed.push(userGuess);
 
+				// play barDown sound
+				sounds.barDown.play();	
+
 				// display 'Goal! What a shot' to result
-				html.writeResult.innerHTML = "Goal! What a shot.";
+				html.writeResult.innerHTML = "Goal! Bar down.";
 			
 				// replace the blanks with the guess based on where the guess appears, display it
 				for (var j = 0; j < randomWords.length; j++) {
