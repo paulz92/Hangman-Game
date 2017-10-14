@@ -1,7 +1,7 @@
 body {
-    height: 100vh; /*so it takes up the full viewport height*/
+    height: 100vh; /*takes up full viewport height*/
     background-image: url(../Images/hockey-game.jpg); /*background image*/
-	background-size: cover; /*more or less fills and fits to screen*/
+	background-size: cover; /*fits screen*/
     background-repeat: no-repeat;
     margin: 0; /*flush*/
     padding: 0;
@@ -10,15 +10,15 @@ body {
 }
 
 .container {
-	overflow: auto;
-	height: 100%;
+	overflow: auto; 
+	height: 100%; 
 	vertical-align: top;
 }
 
 .main-content {
 	margin: 0 auto; /*center it*/
 	width: 1200px; /*leave some side margin*/
-	height: 100vh; /*100% of body/viewport*/
+	height: 100vh; /*same as body/viewport*/
 }
 
 header {
@@ -36,7 +36,7 @@ h1 {
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders. google fu!*/
+	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders*/
 }
 
 #h2 {
@@ -45,7 +45,7 @@ h1 {
 	font-weight: bold;
 	text-align: center;
 	color: white;
-	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders. google fu!*/
+	text-shadow: -2px 0 red, 0 2px blue, 2px 0 red, 0 -2px blue; /*outlines text with borders*/
 }
 
 #result {
@@ -59,7 +59,7 @@ h3 {
 	font-family: 'Barrio', cursive; /*google fonts*/
 	text-align: center;
 	color: white;
-	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*outlines text with borders. google fu!*/
+	text-shadow: -1.3px 0 red, 0 1.3px blue, 1.3px 0 red, 0 -1.3px blue; /*outlines text with borders*/
 	font-size: 2.9em;
 	background-color: #3297FD;
 	padding-top: 4px;
@@ -107,6 +107,7 @@ p {
 }
 
 /*media queries for responsiveness*/
+/*smaller fonts/borders/heights/widths based on screen size*/
 @media screen and (max-width: 1220px) {
  
 	.main-content {
@@ -114,7 +115,7 @@ p {
 	}
 
 	.net {
-		border: 25px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border: 25px solid #b30000;
 		border-bottom: 10px solid #3297FD;
 	}
 
@@ -148,7 +149,7 @@ p {
 
 	.net {
 		width: 90%;
-		border: 25px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border: 25px solid #b30000;
 		border-bottom: 10px solid #3297FD;
 	}
 
@@ -190,7 +191,7 @@ p {
 	}
 
 	.net {
-		border: 20px solid #b30000; /*thick to look like hockey posts/crossbar*/
+		border: 20px solid #b30000;
 		border-bottom: 10px solid #3297FD;
 	}
 
