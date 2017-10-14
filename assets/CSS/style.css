@@ -1,5 +1,4 @@
 body {
-    /*width: 100%; body full with of window*/
     height: 100vh; /*so it takes up the full viewport height*/
     background-image: url(../Images/hockey-game.jpg); /*background image*/
 	background-size: cover; /*more or less fills and fits to screen*/
@@ -12,6 +11,8 @@ body {
 
 .container {
 	overflow: auto;
+	height: 100%;
+	vertical-align: top;
 }
 
 .main-content {
@@ -49,6 +50,7 @@ h1 {
 
 #result {
 	margin: 0 auto; /*centered*/
+	margin-top: 16px;
 	width: 75%; /*leave some space on the sides*/
 	text-align: center;
 }
@@ -62,16 +64,14 @@ h3 {
 	background-color: #3297FD;
 	padding-top: 4px;
 	border-radius: 25px; /*like the rounded over the edged */
-	position: relative;
-	bottom:-5px; /*moved it down 7px to look nicer on screen*/
 }
 
 .net {
 	margin: 0 auto; /*centered within main-content*/
-	padding-top: 15px;
-	width: 75%;
-	height: 62%;
+	width: 72%;
+	height: 58%;
 	text-align: center;
+	padding-top: 5px;
 	border: 30px solid #b30000; /*thick to look like hockey posts/crossbar*/
 	border-bottom: 10px solid #3297FD;
 	border-radius: 25px 25px 0px 0px;
@@ -83,7 +83,6 @@ h3 {
 
 .stats {
 	margin: 0 auto; /*center within the net horizontally*/
-	margin-top: 15px; /*center within the net vertically*/
 	width: 65%;
 }
 
@@ -104,6 +103,7 @@ h4 {
 p {
 	font-family: 'Bungee Inline', cursive; /*google fonts*/
 	font-size: 1.5em;
+	line-height: .5em;
 }
 
 /*media queries for responsiveness*/
