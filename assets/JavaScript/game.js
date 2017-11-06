@@ -1,29 +1,3 @@
-// Pseudocode
-// ==================================================================================================
-// check 1) On page load, press space bar to begin game
-// check 2) When game begins:
-//            - a word is selected randomly, the letters in word are converted to _s, the _s
-//              overwrite the #word text
-// check 3) User presses keys to begin guessing the letters
-// check 4) if guess appears in the word, that letter replaces the underline(s) for it
-// check 5) if guess not in word, guess appears in incorrect guesses section and # incorrect guesses
-//          decreases by 1
-// check 6) if user repeats a guess, alert user, nothing happens to stats. important to not decrease 
-//          # guesses for accidentally repeated guesses or add it to incorrect guesses more than once
-// check 7) user repeats this process until 1 of 2 things happens:
-//        7.1) if user guesses all letters correctly before # guesses is 0:
-//         		- update result to "hockey themed win text"
-//              - increase wins by 1
-//              - reset # guesses to 10
-//              - reset incorrect guesses to 'None yet!'
-//              - immediately restart game                 
-// 		   7.2) if user depletes guesses before all _s are erased:
-//              - update result to 'snarky lose message'
-//              - reset # guesses to 10
-//              - reset incorrect guesses to 'None yet'
-//              - immediately restart game
-//==================================================================================================
-
 // creating global variables
 // words array
 var words = ["gretzky", "lemieux", "brodeur", "messier", "slapshot", "assist", "penalty", "powerplay", 
